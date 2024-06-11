@@ -2,20 +2,23 @@ package net.mwti.stoneexpansion.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.registry.RegistryWrapper;
 import net.mwti.stoneexpansion.block.BlockMaterial;
 import net.mwti.stoneexpansion.block.BlockShape;
 import net.mwti.stoneexpansion.block.BlockVariant;
 import net.mwti.stoneexpansion.block.ModBlocks;
 
+import java.util.concurrent.CompletableFuture;
+
 import static net.mwti.stoneexpansion.StoneExpansion.MOD_ID;
 
 public class ModLang extends FabricLanguageProvider {
-    public ModLang(FabricDataOutput dataGenerator) {
-        super(dataGenerator, "en_us");
+    public ModLang(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataGenerator, "en_us", registryLookup);
     }
 
     @Override
-    public void generateTranslations(TranslationBuilder translationBuilder) {
+    public void generateTranslations(RegistryWrapper.WrapperLookup w, TranslationBuilder translationBuilder) {
 
         translationBuilder.add("itemGroup." + MOD_ID + ".blocks","Mwti's Stone Expansion");
 

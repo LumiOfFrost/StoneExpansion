@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "stoneexpansion",
-	"version": "2.2.0-mc1.20.1",
+	"version": "2.2.0-mc1.20.6",
 	"name": "Stone Expansion",
 	"description": "More stone variants!",
 	"authors": [
@@ -29,9 +29,9 @@
 		"stoneexpansion.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.22",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
+		"fabricloader": ">=0.15.10",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {

@@ -2,15 +2,18 @@ package net.mwti.stoneexpansion.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.registry.RegistryWrapper;
 import net.mwti.stoneexpansion.block.BlockMaterial;
 import net.mwti.stoneexpansion.block.BlockShape;
 import net.mwti.stoneexpansion.block.BlockVariant;
 
+import java.util.concurrent.CompletableFuture;
+
 import static net.mwti.stoneexpansion.block.ModBlocks.getModdedBlock;
 
 public class ModLootTables extends FabricBlockLootTableProvider {
-    public ModLootTables(FabricDataOutput dataOutput) {
-        super(dataOutput);
+    public ModLootTables(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(dataOutput, registriesFuture);
     }
 
     @Override
